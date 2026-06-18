@@ -10,11 +10,12 @@ env:
  PORT: 8080
 jobs:
   test:
+    environment: testing #this job will use this environemnt and specified there secrets and env
     env: 
      MONGODB_CLUSTER_ADDRESS: cluster0.qbhued1.mongodb.net
      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
-    environment: testing
+
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
